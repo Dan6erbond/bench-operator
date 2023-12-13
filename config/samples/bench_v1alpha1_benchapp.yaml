@@ -1,0 +1,12 @@
+apiVersion: bench.ravianand.me/v1alpha1
+kind: BenchApp
+metadata:
+  labels:
+    app.kubernetes.io/name: benchapp
+    app.kubernetes.io/instance: benchapp-sample
+    app.kubernetes.io/part-of: bench-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: bench-operator
+  name: benchapp-sample
+spec:
+  # TODO(user): Add fields here

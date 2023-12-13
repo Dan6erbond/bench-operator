@@ -1,0 +1,85 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - bench.ravianand.me
+  resources:
+  - benchapps
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - bench.ravianand.me
+  resources:
+  - benchapps/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - bench.ravianand.me
+  resources:
+  - benchapps/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - bench.ravianand.me
+  resources:
+  - benchinstallations
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - bench.ravianand.me
+  resources:
+  - benchinstallations/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - bench.ravianand.me
+  resources:
+  - benchinstallations/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - bench.ravianand.me
+  resources:
+  - benchsites
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - bench.ravianand.me
+  resources:
+  - benchsites/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - bench.ravianand.me
+  resources:
+  - benchsites/status
+  verbs:
+  - get
+  - patch
+  - update

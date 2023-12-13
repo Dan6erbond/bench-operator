@@ -1,0 +1,6 @@
+## Append samples of your project ##
+resources:
+- bench_v1alpha1_benchinstallation.yaml
+- bench_v1alpha1_benchapp.yaml
+- bench_v1alpha1_benchsite.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

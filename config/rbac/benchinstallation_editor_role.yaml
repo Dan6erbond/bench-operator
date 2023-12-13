@@ -1,0 +1,31 @@
+# permissions for end users to edit benchinstallations.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: benchinstallation-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: bench-operator
+    app.kubernetes.io/part-of: bench-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: benchinstallation-editor-role
+rules:
+  - apiGroups:
+      - bench.ravianand.me
+    resources:
+      - benchinstallations
+    verbs:
+      - create
+      - delete
+      - get
+      - list
+      - patch
+      - update
+      - watch
+  - apiGroups:
+      - bench.ravianand.me
+    resources:
+      - benchinstallations/status
+    verbs:
+      - get

@@ -1,0 +1,27 @@
+# permissions for end users to view benchsites.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: benchsite-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: bench-operator
+    app.kubernetes.io/part-of: bench-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: benchsite-viewer-role
+rules:
+  - apiGroups:
+      - bench.ravianand.me
+    resources:
+      - benchsites
+    verbs:
+      - get
+      - list
+      - watch
+  - apiGroups:
+      - bench.ravianand.me
+    resources:
+      - benchsites/status
+    verbs:
+      - get
